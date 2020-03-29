@@ -613,6 +613,7 @@ class NfcManager extends ReactContextBaseJavaModule implements ActivityEventList
                     // but it doesn't provide transceive in its interface, so we need to explicitly cast it
                     if (tech.equals("NfcA")) {
                         NfcA techHandle = (NfcA)baseTechHandle;
+                        techHandle.setTimeout(50000);
                         byte[] resultBytes = techHandle.transceive(bytes);
                         WritableArray resultRnArray = bytesToRnArray(resultBytes);
                         callback.invoke(null, resultRnArray);
@@ -625,6 +626,7 @@ class NfcManager extends ReactContextBaseJavaModule implements ActivityEventList
                         return;
                     } else if (tech.equals("NfcF")) {
                         NfcF techHandle = (NfcF)baseTechHandle;
+                        techHandle.setTimeout(50000);
                         byte[] resultBytes = techHandle.transceive(bytes);
                         WritableArray resultRnArray = bytesToRnArray(resultBytes);
                         callback.invoke(null, resultRnArray);
@@ -637,18 +639,21 @@ class NfcManager extends ReactContextBaseJavaModule implements ActivityEventList
                         return;
                     } else if (tech.equals("IsoDep")) {
                         IsoDep techHandle = (IsoDep)baseTechHandle;
+                        techHandle.setTimeout(50000);
                         byte[] resultBytes = techHandle.transceive(bytes);
                         WritableArray resultRnArray = bytesToRnArray(resultBytes);
                         callback.invoke(null, resultRnArray);
                         return;
                     } else if (tech.equals("MifareClassic")) {
                         MifareClassic techHandle = (MifareClassic) baseTechHandle;
+                        techHandle.setTimeout(50000);
                         byte[] resultBytes = techHandle.transceive(bytes);
                         WritableArray resultRnArray = bytesToRnArray(resultBytes);
                         callback.invoke(null, resultRnArray);
                         return;
                     } else if (tech.equals("MifareUltralight")) {
                         MifareUltralight techHandle = (MifareUltralight)baseTechHandle;
+                        techHandle.setTimeout(50000);
                         byte[] resultBytes = techHandle.transceive(bytes);
                         WritableArray resultRnArray = bytesToRnArray(resultBytes);
                         callback.invoke(null, resultRnArray);
